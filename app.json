@@ -1,0 +1,39 @@
+{
+  "services": {
+    "otus-social-network-service": {
+      "webServer": {
+        "port": 7028
+      },
+      "log": {
+        "file": "otus-social-network-service.log",
+        "level": "DEBUG",
+        "http": true,
+        "stack": true,
+        "stdOut": true,
+        "maxSize": 500,
+        "maxAge": 28,
+        "maxBackups": 5,
+        "compress": true
+      },
+      "database": {
+        "dialect": "postgres",
+        "host": "10.0.5.10",
+        "port": "5432",
+        "user": "eosan",
+        "password": "eosan",
+        "name": "socialnetwork",
+        "sslmode": "disable",
+        "recreate": false,
+        "initPrivileges": false,
+        "defaults": false,
+        "timeout": -1,
+        "prefix": ""
+      },
+      "auth": {
+        "salt": "mysalt",
+        "signingkey": "UNSECURE_SIGNING_KEY_EXAMPLE",
+        "tokenttl": 86400
+      }
+    }
+  }
+}
